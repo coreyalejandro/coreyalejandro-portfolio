@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 38 31% 94%;
+  --foreground: 24 12% 10%;
+  --card: 38 25% 97%;
+  --card-foreground: 24 12% 10%;
+  --muted: 36 18% 88%;
+  --muted-foreground: 24 8% 40%;
+  --border: 30 13% 78%;
+  --primary: 18 42% 39%;
+  --primary-foreground: 38 25% 97%;
+  --accent: 33 55% 72%;
+  --destructive: 4 60% 42%;
+  --success: 142 38% 33%;
+  --warning: 35 75% 42%;
+  --radius: 1rem;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "SF Mono", "Fira Code", "Cascadia Code", Consolas, monospace;
+}
+
+.dark {
+  --background: 24 10% 8%;
+  --foreground: 38 25% 94%;
+  --card: 24 10% 11%;
+  --card-foreground: 38 25% 94%;
+  --muted: 24 9% 16%;
+  --muted-foreground: 35 9% 66%;
+  --border: 24 8% 21%;
+  --primary: 20 47% 53%;
+  --primary-foreground: 24 10% 8%;
+  --accent: 34 43% 36%;
+  --destructive: 4 70% 56%;
+  --success: 142 42% 47%;
+  --warning: 35 82% 55%;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, hsl(var(--accent) / 0.17), transparent 34rem),
+    radial-gradient(circle at 85% 8%, hsl(var(--primary) / 0.12), transparent 30rem),
+    hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-sans);
+}
+
+a { color: inherit; text-decoration: none; }
+::selection { background: hsl(var(--primary) / 0.22); }
+
+@layer components {
+  .container-shell { @apply mx-auto w-full max-w-7xl px-5 sm:px-8; }
+  .section-pad { @apply py-16 sm:py-24; }
+  .eyebrow { @apply font-mono text-xs uppercase tracking-[0.2em] text-primary; }
+  .surface { @apply rounded-2xl border border-border bg-card/85 shadow-soft shadow-black/10 backdrop-blur; }
+  .focus-ring { @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background; }
+}
