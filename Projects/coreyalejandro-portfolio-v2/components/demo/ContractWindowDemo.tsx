@@ -98,7 +98,7 @@ function CollapsibleSection({
       <button
         type="button"
         onClick={() => setExpanded((v) => !v)}
-        aria-expanded={expanded}
+        aria-expanded={expanded ? "true" : "false"}
         aria-controls={sectionId}
         className="flex w-full items-center justify-between gap-2 px-4 py-3 text-left transition hover:bg-muted/50"
       >
