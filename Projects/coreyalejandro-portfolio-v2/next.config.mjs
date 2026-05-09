@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true
+  turbopack: {
+    root: "/Users/coreyalejandro/Projects/coreyalejandro-portfolio-v2",
+  },
 };
 
 export default nextConfig;
